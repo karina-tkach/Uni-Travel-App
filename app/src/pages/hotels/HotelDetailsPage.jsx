@@ -17,7 +17,7 @@ export default function HotelDetailsPage() {
     const [showFullDescription, setShowFullDescription] = useState(false);
     const { user } = useAuth();
 
-    const [search, setSearch] = useState({
+    const [search] = useState({
         checkIn: checkIn,
         checkOut: checkOut,
         hotelId: id
@@ -37,7 +37,7 @@ export default function HotelDetailsPage() {
         };
 
         fetchHotel();
-    }, [id, navigate]);
+    }, [id, navigate, search, start, stop]);
 
     if (loading) {
         return <LoadingPage/>;

@@ -6,17 +6,15 @@ import {useAuth} from "../../context/AuthContext.jsx";
 
 export default function Header() {
     const [open, setOpen] = useState(false);
-    const { user, loading, fetchUser } = useAuth();
+    const { user, fetchUser } = useAuth();
     const navigate = useNavigate();
     const isLoggedIn = user && user.username !== null;
     const isAdmin = user?.roles.includes("ADMIN");
     const isPartner = user?.roles.includes("PARTNER");
-    const isVisitor = user?.roles.includes("VISITOR");
-    const isAnalyst = user?.roles.includes("ANALYST");
 
     useEffect(() => {
         fetchUser();
-    }, []);
+    });
 
     const handleLogout = async () => {
         try {
@@ -26,7 +24,7 @@ export default function Header() {
             });
             navigate("/login");
             await fetchUser();
-        } catch (error) {
+        } catch {
             navigate('/error', {
                 state: {
                     message: "Щось пішло не так",

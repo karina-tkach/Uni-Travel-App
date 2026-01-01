@@ -1,10 +1,9 @@
 import {useEffect, useState} from "react";
-import {useLocation, useNavigate, useParams, Link} from "react-router-dom";
+import {useNavigate, useParams, Link} from "react-router-dom";
 import {useLoading} from "../../utils/useLoading.jsx";
 import {fetchData} from "../../utils/fetch.jsx";
 import LoadingPage from "../LoadingPage.jsx";
 import {Stars} from "../../components/offers/Stars.jsx";
-import {Heart} from "lucide-react";
 import {useAuth} from "../../context/AuthContext.jsx";
 
 export default function TransportDetailsPage() {
@@ -29,7 +28,7 @@ export default function TransportDetailsPage() {
         };
 
         fetchTransport();
-    }, [id, navigate]);
+    }, [id, navigate, start, stop]);
 
     if (loading) {
         return <LoadingPage/>;
