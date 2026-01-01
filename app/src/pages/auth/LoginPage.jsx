@@ -38,7 +38,7 @@ export default function LoginPage() {
                     }
                 });
             }
-        } catch (error) {
+        } catch {
             navigate('/error', {
                 state: {
                     message: "Щось пішло не так",

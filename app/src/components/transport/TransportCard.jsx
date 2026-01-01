@@ -1,7 +1,6 @@
 import {Stars} from "../offers/Stars.jsx";
 import {Info} from "lucide-react";
 import {Link} from "react-router-dom";
-import {useState} from "react";
 
 export function TransportCard({item, path, onAdd, isSelected}) {
 
