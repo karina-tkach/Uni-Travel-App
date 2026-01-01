@@ -55,7 +55,7 @@ export default function AddUserModal({ onClose, onSuccess }) {
                     }
                 });
             }
-        } catch (error) {
+        } catch {
             navigate('/error', {
                 state: {
                     message: "Щось пішло не так",

@@ -28,7 +28,7 @@ export default function SavedItemsPage() {
 
     useEffect(() => {
         fetchSaved();
-    }, []);
+    });
 
     const onUnsave = async (item) => {
         await fetchData({

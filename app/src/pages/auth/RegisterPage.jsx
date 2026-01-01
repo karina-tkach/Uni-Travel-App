@@ -37,7 +37,7 @@ export default function RegisterPage() {
                     }
                 });
             }
-        } catch (error) {
+        } catch {
             navigate('/error', {
                 state: {
                     message: "Щось пішло не так",

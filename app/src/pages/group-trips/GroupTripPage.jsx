@@ -33,7 +33,7 @@ export default function GroupTripPage() {
         };
 
         fetchTrip();
-    }, [id, navigate]);
+    }, [id, navigate, start, stop]);
 
     useEffect(() => {
         if (!trip.id) return;

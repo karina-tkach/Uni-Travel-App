@@ -24,7 +24,7 @@ export default function ProfilePage() {
             onFinally: loading.stop,
             onSuccess: data => setLikedItems(data || [])
         });
-    }, [])
+    })
 
     const [showForm, setShowForm] = useState(false);
 
@@ -58,7 +58,7 @@ export default function ProfilePage() {
             navigate,
             onStart: loading.start,
             onFinally: loading.stop,
-            onSuccess: data => {
+            onSuccess: () => {
                 setShowForm(false);
                 fetchUser();
             }

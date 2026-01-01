@@ -44,7 +44,7 @@ export default function MyTripsPage() {
 
     useEffect(() => {
         fetchAll();
-    }, []);
+    });
 
     if (loading || loadingJoined) {
         return <LoadingPage/>;

@@ -31,12 +31,12 @@ export const fetchData = async ({
         if (response.status === 204 || response.status === 200 && response.headers.get("Content-Length") === "0") {
             onSuccess?.();
         } else if (response.status === 200 || response.status === 201) {
-            const data = await response.json();
-            onSuccess?.(data);
+            await response.json();
+            onSuccess?.();
         } else {
-            onSuccess?.([]);
+            onSuccess?.();
         }
-    } catch (error) {
+    } catch {
         navigate("/error", {
             state: {
                 message: "An unexpected error occurred",

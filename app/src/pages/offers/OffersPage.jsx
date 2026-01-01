@@ -260,6 +260,7 @@ export default function OffersPage() {
         });
     };
 
+    /* eslint-disable-next-line react-hooks/exhaustive-deps */
     useEffect(() => {
         setFoodItems(prev => prev.map(i => ({ ...i, saved: savedIds.has(i.id) })));
         setActivitiesItems(prev => prev.map(i => ({ ...i, saved: savedIds.has(i.id) })));
