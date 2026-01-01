@@ -23,7 +23,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build & test backend
-        run: ./gradlew clean test build
+        run: ./gradlew clean test build -Dspring.profiles.active=test
 
   frontend:
     name: Frontend – Lint, Test & Build
