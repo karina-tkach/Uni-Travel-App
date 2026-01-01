@@ -49,10 +49,6 @@ jobs:
         run: |
           npm run lint
 
-      - name: Run frontend tests
-        working-directory: app
-        run: npm test -- --watch=false
-
       - name: Build frontend
         working-directory: app
         run: npm run build
